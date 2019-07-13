@@ -47,9 +47,19 @@ public class KNearestNeighborClassifier {
    * @param testFeature
    * @return int distance    The distance of two point
    */
-  public int eucDistance(ArrayList trainFeature, ArrayList testFeature) {
-    //TODO Using the euclidean distance algorithm to calculate the distance
-    return 0;
+  public double eucDistance(ArrayList<Integer> trainFeature, ArrayList<Integer> testFeature) {
+    /* 
+     * euclidean distance formula:
+     * 
+     * distance = sqrt((a2-a1)^2 + (b2-b1)^2 + ... + (n2-n1)^2)
+     */
+    double sum = 0;
+    for (int i = 0; i < trainFeature.size(); i++) {
+      double operation = Math.pow((trainFeature.get(i) - testFeature.get(i)), 2);
+      sum = sum + operation;
+    }
+    double finalDistance = Math.sqrt(sum);
+    return finalDistance;
   }
 
   /**

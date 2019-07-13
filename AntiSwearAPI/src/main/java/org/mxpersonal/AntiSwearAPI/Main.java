@@ -23,9 +23,45 @@
  */
 package org.mxpersonal.AntiSwearAPI;
 
+import java.util.ArrayList;
+import java.util.Random;
+import org.mxpersonal.AntiSwearAPI.Api.KNearestNeighborClassifier;
+import org.mxpersonal.AntiSwearAPI.Api.QuickSort;
 
+// This class is only for testing
 public class Main {
   public static void main(String[] args) {
-    System.out.println("System running");
+    // Euc distance
+    ArrayList<Integer> test = new ArrayList<Integer>();
+    test.add(3);
+    test.add(2);
+    test.add(5);
+    test.add(1);
+    test.add(0);
+    ArrayList<Integer> train = new ArrayList<Integer>();
+    train.add(2);
+    train.add(2);
+    train.add(3);
+    train.add(0);
+    train.add(3);
+    KNearestNeighborClassifier knn = new KNearestNeighborClassifier();
+    double result = knn.eucDistance(train, test);
+    System.out.println("Euc test: " + result);
+
+    // Quick Sort
+    Random rnd = new Random();
+    int arr[] = new int[10];
+    for (int i = 0; i < 10; i++) {
+      arr[i] = rnd.nextInt(100);
+    }
+    System.out.print("un-sorted array: ");
+    QuickSort.printArray(arr);
+    int n = arr.length;
+
+    QuickSort ob = new QuickSort();
+    ob.sort(arr, 0, n - 1);
+
+    System.out.print("sorted array: ");
+    QuickSort.printArray(arr);
   }
 }
