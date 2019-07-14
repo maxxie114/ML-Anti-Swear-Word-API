@@ -25,11 +25,13 @@ package org.mxpersonal.AntiSwearAPI.Api;
 
 public class TextProcessor {
 
-  /**
-   * 
+  /* 
+   * TODO 
+   * 1. implement convert() that convert words to data
+   * 2. implement split that split sentences into words
+   * 3. implement convertAll() that convert each words in the
+   * sentence into data, and return an arraylist of array
    */
-  public TextProcessor() {
-    // TODO Auto-generated constructor stub
-  }
+
 
 }
