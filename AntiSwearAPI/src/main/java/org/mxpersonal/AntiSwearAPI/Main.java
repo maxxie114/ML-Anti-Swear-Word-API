@@ -54,7 +54,7 @@ public class Main {
     return content;
   }
 
-  public static void main(String[] args) {
+  public static void main(String[] args) throws IOException {
     // Euc distance
     ArrayList<Integer> test = new ArrayList<Integer>();
     test.add(3);
@@ -89,7 +89,8 @@ public class Main {
     QuickSort.printArray(arr);
 
     // kNN
-    ArrayList<String[]> trainData2 = new ArrayList<String[]>();
+    ArrayList<int[]> trainData2 = new ArrayList<int[]>();
+    trainData2 = readData();
     int[] testArr =
         new int[] {0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 4};
     knn.fit(trainData2);
