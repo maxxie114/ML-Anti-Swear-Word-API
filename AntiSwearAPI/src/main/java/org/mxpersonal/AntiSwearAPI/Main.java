@@ -23,6 +23,10 @@
  */
 package org.mxpersonal.AntiSwearAPI;
 
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Random;
 import org.mxpersonal.AntiSwearAPI.Api.KNearestNeighborClassifier;
@@ -30,6 +34,26 @@ import org.mxpersonal.AntiSwearAPI.Api.QuickSort;
 
 // This class is only for testing
 public class Main {
+
+  public static ArrayList<int[]> readData() throws IOException {
+    String file = "convertedTrainingData.csv";
+    ArrayList<int[]> content = new ArrayList<int[]>();
+    try (BufferedReader br = new BufferedReader(new FileReader(file))) {
+      String line = "";
+      while ((line = br.readLine()) != null) {
+        String[] temp = line.split(",");
+        int[] convertedArr = new int[temp.length];
+        for (int i = 0; i < temp.length; i++) {
+          convertedArr[i] = Integer.parseInt(temp[i]);
+        }
+        content.add(convertedArr);
+      }
+    } catch (FileNotFoundException e) {
+      e.printStackTrace();
+    }
+    return content;
+  }
+
   public static void main(String[] args) {
     // Euc distance
     ArrayList<Integer> test = new ArrayList<Integer>();
@@ -45,8 +69,8 @@ public class Main {
     train.add(0);
     train.add(3);
     KNearestNeighborClassifier knn = new KNearestNeighborClassifier();
-    double result = knn.eucDistance(train, test);
-    System.out.println("Euc test: " + result);
+    // double result = knn.eucDistance(train, test);
+    // System.out.println("Euc test: " + result);
 
     // Quick Sort
     Random rnd = new Random();
@@ -63,5 +87,11 @@ public class Main {
 
     System.out.print("sorted array: ");
     QuickSort.printArray(arr);
+
+    // kNN
+    ArrayList<String[]> trainData2 = new ArrayList<String[]>();
+    int[] testArr =
+        new int[] {0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 4};
+    knn.fit(trainData2);
   }
 }
