@@ -40,7 +40,7 @@ def convert(word, isBadword):
     occurences = []
 
     for i in range(26):
-        singleLetterOccurences = 0
+        singleLetterOccurences = 1
         for j in word:
             if j == alphabet[i]:
                 singleLetterOccurences += 1
