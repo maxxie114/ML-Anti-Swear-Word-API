@@ -91,8 +91,35 @@ public class Main {
     // kNN
     ArrayList<int[]> trainData2 = new ArrayList<int[]>();
     trainData2 = readData();
-    int[] testArr =
-        new int[] {0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 4};
+    int[] testArr;
+    int result = -1;
+    // test 1
+    testArr =
+        ////////// a  b  c  d  e  f  g  h  i  j  k  l  m  n  o  p  q  r  s  t  u  v  w  x  y  z
+        new int[] {1, 1, 2, 1, 1, 2, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 4}; // f4ck  
     knn.fit(trainData2);
+    result = knn.predict(testArr);
+    System.out.println(result);
+    // test 2
+    testArr =
+        ////////// a  b  c  d  e  f  g  h  i  j  k  l  m  n  o  p  q  r  s  t  u  v  w  x  y  z
+        new int[] {2, 1, 1, 1, 2, 1, 1, 2, 1, 1, 1, 2, 1, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 7}; // a$$hole 
+    knn.fit(trainData2);
+    result = knn.predict(testArr);
+    System.out.println(result);
+    // test 3
+    testArr =
+        ////////// a  b  c  d  e  f  g  h  i  j  k  l  m  n  o  p  q  r  s  t  u  v  w  x  y  z
+        new int[] {1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 3}; // fuk
+    knn.fit(trainData2);
+    result = knn.predict(testArr);
+    System.out.println(result);
+    // test 4
+    testArr =
+        ////////// a  b  c  d  e  f  g  h  i  j  k  l  m  n  o  p  q  r  s  t  u  v  w  x  y  z
+        new int[] {1, 1, 1, 1, 2, 1, 1, 2, 1, 1, 1, 3, 1, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 5}; // hello
+    knn.fit(trainData2);
+    result = knn.predict(testArr);
+    System.out.println(result);
   }
 }

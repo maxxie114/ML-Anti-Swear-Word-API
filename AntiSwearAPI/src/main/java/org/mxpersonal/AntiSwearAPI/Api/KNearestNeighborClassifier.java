@@ -119,6 +119,7 @@ public class KNearestNeighborClassifier {
 
     // Step 1 : Determine k    
     double k = Math.sqrt(this.trainingData.size());
+    k = 3.0;
 
     // Step 2: Calculate distances
     // Create an ArrayList to hold all the distances calculated
@@ -142,7 +143,7 @@ public class KNearestNeighborClassifier {
       int resultOfSmallestDistance = results.get(indexOfSmallestDistance);
       closestResultLst.add(resultOfSmallestDistance);
       // Set the smallest distance to null, so it won't be searched again
-      distances.set(indexOfSmallestDistance, null);
+      distances.set(indexOfSmallestDistance, 10.0);
     }
 
     // Step 4: Determine which one should be the result by looking at the majority of the numbers
@@ -156,7 +157,10 @@ public class KNearestNeighborClassifier {
     }
 
     // Step 5: Return the result
-    if (yes > no) {
+    // test code
+    // System.out.println(yes);
+    // System.out.println(no);
+    if (yes >= no) {
       return 1;
     } else {
       return 0;
