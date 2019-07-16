@@ -117,7 +117,7 @@ public class Main {
     // test 4
     testArr =
         ////////// a  b  c  d  e  f  g  h  i  j  k  l  m  n  o  p  q  r  s  t  u  v  w  x  y  z
-        new int[] {1, 1, 1, 1, 2, 1, 1, 2, 1, 1, 1, 3, 1, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 5}; // hello
+        new int[] {1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 3, 1, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 5}; // h3llo
     knn.fit(trainData2);
     result = knn.predict(testArr);
     System.out.println(result);
