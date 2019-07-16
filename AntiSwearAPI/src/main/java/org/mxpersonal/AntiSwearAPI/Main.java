@@ -121,5 +121,13 @@ public class Main {
     knn.fit(trainData2);
     result = knn.predict(testArr);
     System.out.println(result);
+
+    /*
+     * Response of all the tests
+     * 1
+     * 1
+     * 1
+     * 0
+     */
   }
 }
