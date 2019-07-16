@@ -35,8 +35,7 @@ import org.mxpersonal.AntiSwearAPI.Api.QuickSort;
 // This class is only for testing
 public class Main {
 
-  public static ArrayList<int[]> readData() throws IOException {
-    String file = "convertedTrainingData.csv";
+  public static ArrayList<int[]> readData(String file) throws IOException {
     ArrayList<int[]> content = new ArrayList<int[]>();
     try (BufferedReader br = new BufferedReader(new FileReader(file))) {
       String line = "";
@@ -90,7 +89,8 @@ public class Main {
 
     // kNN
     ArrayList<int[]> trainData2 = new ArrayList<int[]>();
-    trainData2 = readData();
+    String file = "convertedTrainingData.csv";
+    trainData2 = readData(file);
     int[] testArr;
     int result = -1;
     // test 1

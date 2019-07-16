@@ -23,6 +23,8 @@
  */
 package org.mxpersonal.AntiSwearAPI.Api;
 
+import java.util.ArrayList;
+
 public class TextProcessor {
 
   /* 
@@ -32,6 +34,38 @@ public class TextProcessor {
    * 3. implement convertAll() that convert each words in the
    * sentence into data, and return an arraylist of array
    */
+
+  /**
+   * This function convert an English word to data array
+   * 
+   * @param  word  the word that need to be converted
+   * @return       The int array that contains all the data      
+   */
+  public int[] convert(String word) {
+    int[] a = new int[5];
+    return a;
+  }
+
+  /**
+   * This function split a sentence into words
+   * 
+   * @param  sentence  The sentence that need to be split
+   * @return           An array of words
+   */
+  public String[] split(String sentence) {
+    String[] result = null;
+    return result;
+  }
+
+  /**
+   * This function convert every words in an array to data.
+   * 
+   * @param  arrOfWords  A string array of words 
+   * @return             An Arraylist of arrays
+   */
+  public ArrayList<Integer> convertAll(String[] arrOfWords) {
+    return null;
+  }
 
 
 }
